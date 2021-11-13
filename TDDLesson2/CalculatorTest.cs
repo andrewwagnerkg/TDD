@@ -16,22 +16,28 @@ namespace TDDLesson2
 
         public void TestOpertaions()
         {
-            CalcDivideByZero();
             CalcAddTest();
             CalcMinusTest();
             CalcDivideTest();
             CalcMultiplyTest();
+            CalcDivideByZero();
         }
 
         private void CalcDivideByZero()
         {
             try
             {
-                if (2 == calc.Divide(4, 0)) _showMessage?.Invoke($"{MethodBase.GetCurrentMethod()?.Name} - {passMessage}");
+                if (2 == calc.Divide(4, 0))
+                    _showMessage?.Invoke($"{MethodBase.GetCurrentMethod()?.Name} - {failedMessage}");
                 else _showMessage?.Invoke($"{MethodBase.GetCurrentMethod()?.Name} - {failedMessage}");
+            }
+            catch (DivideByZeroException ex)
+            {
+                _showMessage?.Invoke($"{MethodBase.GetCurrentMethod()?.Name} - {passMessage}");
             }
             catch (Exception e)
             {
+                _showMessage?.Invoke($"{MethodBase.GetCurrentMethod()?.Name} - {failedMessage}");
                 _showMessage(e.Message);
             }
         }
@@ -45,6 +51,7 @@ namespace TDDLesson2
             }
             catch (Exception ex)
             {
+                _showMessage?.Invoke($"{MethodBase.GetCurrentMethod()?.Name} - {failedMessage}");
                 _showMessage(ex.Message);
             }
         }
@@ -58,6 +65,7 @@ namespace TDDLesson2
             }
             catch (Exception e)
             {
+                _showMessage?.Invoke($"{MethodBase.GetCurrentMethod()?.Name} - {failedMessage}");
                 _showMessage(e.Message);
             }
         }
@@ -71,6 +79,7 @@ namespace TDDLesson2
             }
             catch (Exception e)
             {
+                _showMessage?.Invoke($"{MethodBase.GetCurrentMethod()?.Name} - {failedMessage}");
                 _showMessage(e.Message);
             }
         }
@@ -84,6 +93,7 @@ namespace TDDLesson2
             }
             catch (Exception e)
             {
+                _showMessage?.Invoke($"{MethodBase.GetCurrentMethod()?.Name} - {failedMessage}");
                 _showMessage(e.Message);
             }
         }
