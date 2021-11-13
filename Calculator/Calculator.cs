@@ -1,6 +1,6 @@
-﻿namespace TDDLesson1
+﻿namespace Calculator
 {
-    class Calculator
+    public class Calculator
     {
         public int Add(int x, int y) => x + y;
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using Calc = Calculator.Calculator;
 
 namespace TDDLesson1
 {
@@ -13,14 +14,15 @@ namespace TDDLesson1
 
         public void TestOpertaions()
         {
-            Calculator calc = new Calculator();
+            Calc calc = new Calc();
+
+            if (2 == calc.Divide(4, 2)) _showMessage?.Invoke($"{MethodBase.GetCurrentMethod()?.Name} - {passMessage}");
+            else _showMessage?.Invoke($"{MethodBase.GetCurrentMethod()?.Name} - {failedMessage}");
+
             if (3 == calc.Add(1, 2)) _showMessage?.Invoke($"{MethodBase.GetCurrentMethod()?.Name} - {passMessage}");
             else _showMessage?.Invoke($"{MethodBase.GetCurrentMethod()?.Name} - {failedMessage}");
 
             if (-1 == calc.Minus(1, 2)) _showMessage?.Invoke($"{MethodBase.GetCurrentMethod()?.Name} - {passMessage}");
-            else _showMessage?.Invoke($"{MethodBase.GetCurrentMethod()?.Name} - {failedMessage}");
-
-            if (2 == calc.Divide(4, 2)) _showMessage?.Invoke($"{MethodBase.GetCurrentMethod()?.Name} - {passMessage}");
             else _showMessage?.Invoke($"{MethodBase.GetCurrentMethod()?.Name} - {failedMessage}");
 
             if (2 == calc.Muliply(1, 2)) _showMessage?.Invoke($"{MethodBase.GetCurrentMethod()?.Name} - {passMessage}");
