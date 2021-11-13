@@ -10,10 +10,12 @@ namespace TDDLesson3
         public static void TestOpertaions()
         {
             Calc calculator = new Calc();
-            Assert.AreEqual(calculator.Add(1, 3), 4);
-            Assert.AreEqual(calculator.Minus(1, 3), -2);
-            Assert.AreEqual(calculator.Muliply(1, 3), 3);
-            Assert.AreEqual(calculator.Divide(3, 1), 3);
+            Assert.AreEqual(4, calculator.Add(1, 3));
+            Assert.AreEqual(-2,calculator.Minus(1, 3));
+            Assert.AreEqual(3, calculator.Muliply(1, 3));
+            Assert.AreEqual(3, calculator.Divide(3, 1));
+
+            //Assert.AreNotEqual(9, calculator.Muliply(1,3));
         }
     }
 }
