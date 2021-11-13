@@ -7,6 +7,7 @@ namespace TDDLesson1
         private string passMessage = "Test passed";
         private string failedMessage = "Test failed";
         private Action<string> _showMessage;
+
         public CalculatorTest(Action<string> showMessageMethod) => _showMessage = showMessageMethod;
 
         public void TestOpertaions()
