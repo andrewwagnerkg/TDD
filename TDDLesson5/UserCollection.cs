@@ -11,5 +11,7 @@ namespace TDDLesson5
         public void Remove(T item) => _storage.Remove(item);
 
         public int Count => _storage.Count;
+
+        public T GetById(int Id) => _storage[Id];
     }
 }
