@@ -138,4 +138,69 @@ namespace Lesson4
             Assert.Fail("message of fail");
         }
     }
+
+    //Ограничения
+    [TestFixture]
+    class AssertConstraintsTests : AssertionHelper
+    {
+        [Test]
+        public void AssertClassic()
+        {
+            Assert.AreEqual(typeof(string), "Hello".GetType());
+            Assert.AreNotEqual(typeof(int), "Hello".GetType());
+        }
+
+        [Test]
+        public void AssertHelper()
+        {
+            Assert.That("Hello", Is.TypeOf(typeof(string)));
+            Assert.That("Hello", Is.Not.TypeOf(typeof(int)));
+        }
+
+        [Test]
+        public void InheritTest()
+        {
+            //Depricated
+            Expect("Hello", TypeOf(typeof(string)));
+            Expect("Hello", Not.TypeOf(typeof(int)));
+        }
+    }
+
+    //Содержание
+    [TestFixture]
+    class ContainsTests : AssertionHelper
+    {
+
+        private int[] iarray;
+        private string[] sarray;
+
+        [SetUp]
+        public void Init()
+        {
+            iarray = new[] { 1, 3, 7, 9, 13 };
+            sarray = new[] { "hello", "Alex", "from", "Alice", "and", "Bob" };
+        }
+
+        [Test]
+        public void ClassicContains()
+        {
+            Assert.Contains(3, iarray);
+            Assert.Contains("hello", sarray);
+        }
+
+        [Test]
+        public void HelperContains()
+        {
+            Assert.That(iarray, Has.Member(3));
+            Assert.That(sarray, Has.No.Member("world"));
+        }
+
+        [Test]
+        public void DeprecatedContains()
+        {
+            Expect(iarray,Contains(3));
+            Expect(sarray,No.Contains("world"));
+            Expect(sarray,Contains("Bob"));
+        }
+    }
 }
