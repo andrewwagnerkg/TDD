@@ -16,7 +16,7 @@ namespace TDDLesson6
         }
 
         [Test]
-        public void ErrorInCtorParameters()
+        public void ErrorInParameters()
         {
             Assert.Throws<ArgumentException>(() =>
             {
@@ -24,6 +24,23 @@ namespace TDDLesson6
                 converter.OutputCurrency = Currency.USD;
                 converter.Value = 8000;
             });
+        }
+
+        [Test]
+        public void ErrorInCtorParameters()
+        {
+            try
+            {
+                KGSConverter converter = new KGSConverter(-90, 80, 1.2m);
+                converter.OutputCurrency = Currency.USD;
+                converter.Value = 8000;
+            }
+            catch (ArgumentException e)
+            {
+                StringAssert.Contains("ctor", e.Message);
+                return;
+            }
+            Assert.Fail("Exception was thrown from no ctor");
         }
 
         [Test]
