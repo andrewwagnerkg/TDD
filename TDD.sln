@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDDStub3", "TDDStub3\TDDStu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDDStub4", "TDDStub4\TDDStub4.csproj", "{D1FEFA1F-9A09-41D1-BCE1-FB0584AFDFCB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDDStub5", "TDDStub5\TDDStub5.csproj", "{BC2FD23E-BE9E-4BC8-975F-E108A41F043B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{D1FEFA1F-9A09-41D1-BCE1-FB0584AFDFCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1FEFA1F-9A09-41D1-BCE1-FB0584AFDFCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1FEFA1F-9A09-41D1-BCE1-FB0584AFDFCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC2FD23E-BE9E-4BC8-975F-E108A41F043B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC2FD23E-BE9E-4BC8-975F-E108A41F043B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC2FD23E-BE9E-4BC8-975F-E108A41F043B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC2FD23E-BE9E-4BC8-975F-E108A41F043B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
