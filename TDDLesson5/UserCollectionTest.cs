@@ -6,13 +6,20 @@ namespace TDDLesson5
     [TestFixture]
     class UserCollectionTest
     {
-        private UserCollection<string> collection; // = new new UserCollection<string>(); // тест Remove проходить не будет
+        private UserCollection<string> collection;// = new UserCollection<string>(); // тест Remove проходить не будет
 
         //Выполнится до начала каждого теста
         [SetUp]
         public void Init()
         {
             collection = new UserCollection<string>();
+        }
+
+        //Выполнится после каждого теста
+        [TearDown]
+        public void AfterTest()
+        {
+            collection = null;
         }
 
         [Test]
@@ -24,6 +31,7 @@ namespace TDDLesson5
 
             Assert.AreEqual(3, collection.Count);
         }
+
 
         [Test]
         public void TestRemove()
@@ -46,7 +54,11 @@ namespace TDDLesson5
             collection.Add("second");
             collection.Add("third");
 
-            Assert.Throws<ArgumentOutOfRangeException>(() => collection.GetById(3));
+            Assert.Throws<ArgumentOutOfRangeException>(() =>
+            {
+                collection.GetById(3);
+
+            });
         }
 
         [Test]
@@ -68,11 +80,6 @@ namespace TDDLesson5
             Assert.Fail("Exception was no thrown.");
         }
 
-        //Выполнится после каждого теста
-        [TearDown]
-        public void AfterTest()
-        {
-            collection = null;
-        }
+        
     }
 }

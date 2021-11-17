@@ -21,7 +21,16 @@ namespace TDDLesson6
         //    ///
         //    /// Написать метод который будет возводить число в указаную степень
         //    ///
-            
+
+        //}
+
+        //[Test]
+        //public void PowNegativeDigitTest()
+        //{
+        //    ///
+        //    /// Написать метод который будет возводить отрицательное число в указаную степень
+        //    ///
+
         //}
 
         //[Test]
@@ -39,7 +48,7 @@ namespace TDDLesson6
         //[Test]
         //public void SqrtExceptionTest()
         //{
-            
+
         //}
 
         [TearDown]
@@ -47,5 +56,6 @@ namespace TDDLesson6
         {
             _calculator = null;
         }
+        
     }
 }

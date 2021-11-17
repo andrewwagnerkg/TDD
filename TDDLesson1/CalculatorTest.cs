@@ -16,7 +16,7 @@ namespace TDDLesson1
         {
             Calc calc = new Calc();
 
-            if (2 == calc.Divide(4, 2)) _showMessage?.Invoke($"{MethodBase.GetCurrentMethod()?.Name} - {passMessage}");
+            if (2 == calc.Divide(4, 0)) _showMessage?.Invoke($"{MethodBase.GetCurrentMethod()?.Name} - {passMessage}");
             else _showMessage?.Invoke($"{MethodBase.GetCurrentMethod()?.Name} - {failedMessage}");
 
             if (3 == calc.Add(1, 2)) _showMessage?.Invoke($"{MethodBase.GetCurrentMethod()?.Name} - {passMessage}");

@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using Calc = Calculator.Calculator;
@@ -13,7 +14,7 @@ namespace Lesson4
         {
             string a = "Hello";
             string b = "world";
-            //a = b;
+            a = b;
             //проверяет ссылается ли переменная на одну область памяти
             Assert.AreSame(a, b);
         }
@@ -124,10 +125,10 @@ namespace Lesson4
     class UtilityTest
     {
         [Test]
-        //[Ignore("ignore message")]
+        [Ignore("ignore message")]
         public void IgnoreTest()
         {
-            //throw new Exception("exception");
+            throw new Exception("exception");
 
             Assert.Ignore("message of reason");
         }
